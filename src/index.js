@@ -11,14 +11,17 @@ import Home from "./Components/Home/Home";
 import { Provider } from "react-redux";
 import store from './store/store';
 import Favorite from "./Components/Favorite/Favorite";
+import Login from "./Components/Login/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  
   <BrowserRouter>
   <Provider store={store}>
-    <Header />
+      <Header />
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/tv" element={<TvShow />} />
       <Route path="/myfavorite" element={<Favorite />} />
       <Route path="/tvdetails/:id" element={<TvDetails />} />
